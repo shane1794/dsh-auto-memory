@@ -193,7 +193,7 @@ const turnStartEvent = (seq, turn, time) => ({ type: 'turn/start', seq, time: ti
     //   旧判据「after2 === after」因此必然失败（1057 -> 1057，长度相同、内容差一个数字）——属判据过期，非产品缺陷。
     //   新判据（保持原意图）：**剥掉节奏计数器后必须逐字节一致** ⇒ 时钟/随机/事件游标漂移仍会被抓住。
     //   下方附变异反向验证：人为注入时钟漂移后本判据必须变红（证明不是恒真守卫）。
-    const stripRhythmMark = (t) => String(t).replace(/\[精简快照 · 第 \d+ 次\]/g, '[精简快照 · 第 N 次]')
+    const stripRhythmMark = (t) => String(t).replace(/\[(?:精简快照 · 第 \d+ 次|slim snapshot · \d+)\]/g, '[slim snapshot · N]')
     const normA = stripRhythmMark(after)
     const norm2 = stripRhythmMark(after2)
     if (norm2 !== normA) {
