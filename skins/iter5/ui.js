@@ -1,14 +1,14 @@
     // Source embedded by tools/build-iter5-skin.mjs inside the host React factory.
     var ITER5_PAGES = [
-      ['home', '工作台', 'Workbench', 'blue', 'overview'],
-      ['library', '记忆库', 'Memory', 'indigo', 'logs'],
-      ['handoff', '接续', 'Continue', 'cyan', 'plan'],
-      ['calendar', '日程', 'Calendar', 'orange', 'calendar'],
-      ['skills', '技能', 'Skills', 'green', 'hub'],
-      ['recall', '唤起回顾', 'Recall review', 'purple', 'refine'],
-      ['mindmap', '工作区关系', 'Workspaces', 'pink', 'workspaces'],
-      ['storage', '存储与维护', 'Storage', 'slate', 'storage'],
-      ['settings', '设置', 'Settings', 'slate', 'settings'],
+      ['home', 'Workbench', 'Workbench', 'blue', 'overview'],
+      ['library', 'Memory library', 'Memory', 'indigo', 'logs'],
+      ['handoff', 'Continuation', 'Continue', 'cyan', 'plan'],
+      ['calendar', 'Schedule', 'Calendar', 'orange', 'calendar'],
+      ['skills', 'Skills', 'Skills', 'green', 'hub'],
+      ['recall', 'Recall review', 'Recall review', 'purple', 'refine'],
+      ['mindmap', 'Workspace relations', 'Workspaces', 'pink', 'workspaces'],
+      ['storage', 'Storage and maintenance', 'Storage', 'slate', 'storage'],
+      ['settings', 'Settings', 'Settings', 'slate', 'settings'],
     ]
     function iter5Identity() { return String(currentSessionIdClient() || '') + '|' + String(currentWs() || '') }
     function iter5PageForTab(tab) {
@@ -291,7 +291,7 @@
           h('nav', { className: 'i5-rail-nav', 'aria-label': L('记忆导航', 'Memory navigation') },
             h('div', { className: 'i5-rail-group' }, ITER5_PAGES.slice(0, 4).map(function (p) { return railBtn(p[0], p[1], p[2], p[0]) })),
             h('div', { className: 'i5-rail-group' }, ITER5_PAGES.slice(4, 8).map(function (p) { return railBtn(p[0], p[1], p[2], p[0]) })),
-            h('div', { className: 'i5-rail-group' }, [railBtn('settings', '设置', 'Settings', 'settings'), railBtn('team', '团队', 'Team', 'mindmap'), railBtn('stats', '统计', 'Stats', 'pulse')])),
+            h('div', { className: 'i5-rail-group' }, [railBtn('settings', 'Settings', 'Settings', 'settings'), railBtn('team', 'Team', 'Team', 'mindmap'), railBtn('stats', 'Statistics', 'Stats', 'pulse')])),
           h('div', { className: 'i5-rail-status' },
             railReadout(L('当前会话', 'Session'), currentWs() ? pathName(currentWs()) : L('尚未选择', 'Not selected')),
             railReadout(L('检索', 'Retrieval'), railTier),
@@ -316,7 +316,7 @@
           h('div', { className: 'i5-sidebar-foot' }, h('div', { className: 'i5-side-tools' }, h('button', { onClick: function () { nav('team') }, 'aria-current': page[0] === 'team' ? 'page' : undefined }, h(Iter5Icon, { name: 'mindmap' }), L('团队', 'Team')), h('button', { onClick: function () { nav('stats') }, 'aria-current': page[0] === 'stats' ? 'page' : undefined }, h(Iter5Icon, { name: 'pulse' }), L('统计', 'Stats'))),
             h('button', { 'data-dam-skin-v4-exit': '', onClick: exitClassic }, L('返回经典皮肤', 'Back to classic')))),
         h('main', { ref: content, className: 'i5-main', key: identity, 'aria-label': title },
-          h('header', { className: 'i5-page-head' }, h('div', null, h('h1', null, title), h('p', null, locale === 'zh' ? ({ home: '查看最近记录、今日日程与当前会话，继续手头的工作。', library: '集中查看用户偏好、项目笔记、每日日志与反思记录。', handoff: '让当前的目标、进度与经验，在下一段会话中继续。', calendar: '把待办与重要时刻放在一起，让每一天更从容。', recall: '回顾每一次记忆唤起，查看判定依据并留下反馈。', skills: '让反复验证的经验，沉淀为可复用的工作方法。', mindmap: '从工作区与记忆之间，发现持续连接的脉络。', storage: '查看记忆语料、维护索引，以及迁移你的积累。', settings: '决定记忆如何记录、唤回与接续，让它更适合你。' }[page[0]] || '记忆与任务，按当前工作区呈现') : 'Memory and tasks for the current workspace')),
+          h('header', { className: 'i5-page-head' }, h('div', null, h('h1', null, title), h('p', null, locale === 'zh' ? ({ home: 'Review recent records, today\'s schedule and the current session, then pick up where you left off.', library: 'See user preferences, project notes, daily logs and reflections in one place.', handoff: 'Let the current goals, progress and lessons carry into the next session.', calendar: 'Keep to-dos and important moments side by side, so each day feels calmer.', recall: 'Review every memory recall, see what drove the decision and leave feedback.', skills: 'Turn repeatedly proven experience into reusable ways of working.', mindmap: 'Find the threads that keep workspaces and memories connected.', storage: 'Browse the memory corpus, maintain the index, and migrate your accumulation.', settings: 'Decide how memory is recorded, recalled and continued, so it fits you better.' }[page[0]] || 'Memory and tasks, shown for the current workspace') : 'Memory and tasks for the current workspace')),
             null),
           h('div', { className: '' }, h(Component, { key: page[0] + ':' + nonce + ':' + JSON.stringify(intent[0]), nonce: nonce, onNav: nav, intent: intent[0] })),
           page[0] === 'storage' ? h('details', { className: 'i5-card' }, h('summary', null, L('调试中心', 'Diagnostics')), h(DebugCenter), h('button', { onClick: function () { nav('settings', { group: 'behavior' }) } }, L('检查更新与高级设置', 'Updates and advanced settings'))) : null))

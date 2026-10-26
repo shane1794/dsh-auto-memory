@@ -1,10 +1,9 @@
-# Ambient Recall · 「潜藏追忆，如影随形」
+# Ambient Recall
 
 **dsh-auto-memory** — *She remembers, unbidden.*
 
 > **EN** Now, across windows, too. Context that survives windows, sessions, and tools
 >
-> **中文** 该想起的，自己浮现。跨窗口 · 跨会话 · 跨工具 —— Ambient Recall · 「潜藏追忆，如影随形」
 
 <p align="center">
   <a href="https://aik358.github.io/dsh-auto-memory/landing/"><strong>🌐 Landing page</strong></a> · <a href="https://aik358.github.io/dsh-auto-memory/landing/news/"><strong>📄 Technical reports</strong></a> · <a href="https://aik358.github.io/dsh-auto-memory/landing/program/"><strong>🧭 Pilot Credits Program</strong></a>
@@ -65,14 +64,13 @@
 </details>
 
 <p align="center">
-  <a href="./README.zh-CN.md"><img alt="中文" src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-%E5%88%87%E6%8D%A2-lightgrey?style=for-the-badge"></a>
   <a href="./README.md"><img alt="English" src="https://img.shields.io/badge/English-current-blue?style=for-the-badge"></a>
   <a href="https://www.npmjs.com/package/@a9i5k4/dsh-auto-memory"><img alt="npm" src="https://img.shields.io/npm/v/@a9i5k4/dsh-auto-memory"></a>
   <a href="https://www.npmjs.com/package/@a9i5k4/dsh-auto-memory"><img alt="npm downloads" src="https://img.shields.io/npm/dt/@a9i5k4/dsh-auto-memory"></a>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@a9i5k4/dsh-auto-memory"><img alt="立即下载" src="https://img.shields.io/badge/%E7%AB%8B%E5%8D%B3%E4%B8%8B%E8%BD%BD-npm%20install-4d6bfe?style=for-the-badge"></a>
+  <a href="https://www.npmjs.com/package/@a9i5k4/dsh-auto-memory"><img alt="Install" src="https://img.shields.io/badge/install-npm%20install-4d6bfe?style=for-the-badge"></a>
   &nbsp;
   <code>pnpm add @a9i5k4/dsh-auto-memory@latest</code>
 </p>
@@ -87,7 +85,7 @@
 </p>
 
 <h3 align="center">
-  <a href="docs/SKIN-GUIDE.md">New UI <code>新款</code></a> &nbsp;·&nbsp; built by
+  <a href="docs/SKIN-GUIDE.md">New UI</a> &nbsp;·&nbsp; built by
   <a href="https://aik358.github.io/dsh-auto-memory/MINERVAOWL7.html"><strong>@Minervaowl7</strong></a>
 </h3>
 
@@ -681,15 +679,12 @@ Papers were authored by the autonomous engineering agent (ZCode / GLM); all conc
 
 **Feedback & chat:** join the community QQ group — [Join the dsh-auto-memory group](https://qm.qq.com/q/v7Asxn6vPa) — for bug reports, usage tips, and quick responses faster than GitHub issues.
 
-### 🏆 Sponsors · 赞助商
+### 🏆 Sponsors
 
-| Logo | 简介 |
+| Logo | About |
 |---|---|
-| <img width="72" alt="dshapi" src="docs/sponsors/dshapi.png"> | **dshapi · API 中转站** —— 为本项目的开发、回归测试，以及 M 系列语义引擎的选型与激活策略研究提供模型端点。没有这些额度，那些基准实验根本跑不起来。<br>[立即注册 →](https://api.dshapi.icu/register?aff=HJU27P7JL39N) |
+| <img width="72" alt="dshapi" src="docs/sponsors/dshapi.png"> | **dshapi · API relay** — provides model endpoints for this project's development, regression testing and the M-series semantic engine selection and activation research. Without those credits the benchmark experiments could not run.<br>[Sign up →](https://api.dshapi.icu/register?aff=H)
 
-<!-- 追加赞助商行模板（logo 文件放 docs/sponsors/ 后取消注释并填空）：
-| <img width="72" alt="名称" src="docs/sponsors/logo文件名.png"> | **名称** —— 简介文字。<br>[链接文字 →](URL) |
--->
 
 Community contributors:
 

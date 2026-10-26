@@ -1,7 +1,6 @@
 # dsh-auto-memory User Guide
 
 <p align="center">
-  <a href="./USER-GUIDE.zh-CN.md"><img alt="中文" src="https://img.shields.io/badge/%E4%B8%AD%E6%96%87-switch-lightgrey?style=for-the-badge"></a>
   <a href="./USER-GUIDE.en.md"><img alt="English" src="https://img.shields.io/badge/English-current-blue?style=for-the-badge"></a>
 </p>
 
@@ -10,8 +9,6 @@
 > She remembers, unbidden: memory never waits for your command — the right memory surfaces on its own; every entry has provenance — checkable, editable, deletable.
 > Source defaults checked 2026-10-06 against upstream v3.2.10; see [SOURCE-REFERENCE.md](SOURCE-REFERENCE.md).
 > Applies to version **3.0+** · Changelog: in-plugin **Settings → Appearance → View changelog**.
-> 中文版：[USER-GUIDE.zh-CN.md](./USER-GUIDE.zh-CN.md)
-
 ---
 
 ## Contents
@@ -125,7 +122,7 @@ The orchestrator of three-layer distillation: **episodic / semantic (facts) / pr
 | Setting | Default | Notes |
 |---|---|---|
 | Welcome tour (`welcomeTourEnabled`) | on | Auto-plays on first launch; replay tour / view changelog beside it |
-| Language (`locale`) | follow system | 中文 / English / follow system |
+| Language (`locale`) | English | English |
 | Font size (`fontScale`) | standard | sm/std/lg/xl; panel text size, **applies immediately, local only** |
 | Accent (`accentTheme`) | DeepSeek blue | DeepSeek blue / graphite / violet; calendar & status colors stay semantic |
 | Graph density (`graphDensity`) | relaxed | Node spacing and count in the workspace mind map |
@@ -214,7 +211,7 @@ One `memory_recall` call (or the panel's Search tab) runs a **multi-arm fused** 
 |---|---|---|
 | **Lexical** | Keyword containment / BM25-style scoring | Zero dependencies, always available; **raw-text details that never make it into L0 summaries — error codes, variable names — are found here**; also covers the handoff corpus and full-line hits |
 | **Semantic** | Vector cosine similarity | Recalls memories that **share no lexical overlap but match in meaning** — query "credential problem for publishing" hits a log that says "npm ENEEDAUTH". Tier C2 = e5-small (built-in JS), tier C3 = BGE-M3 (Python sidecar); the Python tier also carries a lexical fallback arm — if the semantic service misbehaves, queries fall back automatically and never come up empty |
-| **Temporal** | Chinese time-expression parsing | When the query contains 「昨天 / 前天 / 上周 / 上上周 / 上个月 / 今年 / 最近 N 天 / N 天前」-style expressions, they parse into a `[start, end)` window and **entries whose dated logs fall inside get a soft ranking boost**. Boost only, never a hard filter; **queries without time expressions behave byte-identically to a build without the arm** |
+| **Temporal** | Chinese time-expression parsing | When the query contains Chinese time expressions such as 昨天 / 前天 / 上周 / 上上周 / 上个月 / 今年 / 最近 N 天 / N 天前, they parse into a `[start, end)` window and **entries whose dated logs fall inside get a soft ranking boost**. Boost only, never a hard filter; **queries without time expressions behave byte-identically to a build without the arm** |
 | **Evidence weighting** | Memory usage history | Each memory's six evidence event types (§7) aggregate into an importance ∈ [0,1] used as a weighting factor on the semantic arm; memories you've corrected sink |
 
 ### 5.2 Fusion & the layered L0 response
@@ -462,4 +459,4 @@ Now: all four are sharded **by session / workspace**, in bounded containers (`si
 
 ---
 
-*BSD-3-Clause · Repo: github.com/Aik358/dsh-auto-memory · Screenshots & story: [README](../README.md) · 中文文档：[USER-GUIDE.zh-CN.md](./USER-GUIDE.zh-CN.md)*
+*BSD-3-Clause · Repo: github.com/Aik358/dsh-auto-memory · Screenshots & story: [README](../README.md) *

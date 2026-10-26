@@ -437,7 +437,7 @@ settings = replaceOnce(settings, "}, '📁 ' + d.name)", "}, h(Iter5Icon, { name
 settings = replaceOnce(settings, "return h('div', { style: { border: '1px solid color-mix(in srgb, var(--dam-accent, #2456c4) 40%, transparent)'", "return h('div', { 'data-native-engine-guide': guide, style: { border: '1px solid color-mix(in srgb, var(--dam-accent, #2456c4) 40%, transparent)'")
 settings = replaceAllT(settings, "id: 'dam-settings-'", "id: 'i5-settings-section-'", 'G0-2/settings:303 设置分节 id 前缀（dam-settings- 改 i5-settings-section-）', 2)
 // Host settings stay native; workbench appearance controls belong in their named group.
-settings = replaceOnce(settings, "h('div', { 'data-dam-settings-content': '',", "props && props.draftScope === 'host' && i5Group[0] === 'appearance' ? h('div', { className: 'i5-workbench-appearance' }, h('strong', null, L3('工作台外观', 'Workbench appearance', 'ワークベンチの外観')), h(Iter5StylePicker), h(Iter5ModePicker)) : null, h('div', { 'data-dam-settings-content': '',")
+settings = replaceOnce(settings, "h('div', { 'data-dam-settings-content': '',", "props && props.draftScope === 'host' && i5Group[0] === 'appearance' ? h('div', { className: 'i5-workbench-appearance' }, h('strong', null, L3('工作台外观', 'Workbench appearance', 'Workbench appearance')), h(Iter5StylePicker), h(Iter5ModePicker)) : null, h('div', { 'data-dam-settings-content': '',")
 // Instance-local tabs/sections avoid collisions when host and workbench settings coexist.
 settings = replaceT(settings, 'var i5Group = useState', "var i5SettingsId = useRef('i5-settings-' + (++iter5SettingsSequence)).current\n      var i5Group = useState", 'G0-2/settings:307 实例级设置区 id 注入')
 settings = replaceAllT(settings, "'i5-settings'", 'i5SettingsId', 'G0-2/settings:308 设置区 id 实例化', 1)

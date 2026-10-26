@@ -100,7 +100,7 @@
         calendarMessage[0] ? h('p',{role:'status'},calendarMessage[0]) : null,
         h('div', { className: 'i5-calendar-columns' },
           h(Iter5Card, { className:'i5-month' }, h('div', { className:'i5-section-heading' }, h('h2',null,y+L(' 年 ',' / ')+(m+1)+L(' 月','')), h('div',{className:'i5-button-group'}, h('button',{'aria-label':L('上个月','Previous month'),onClick:function(){month[1](new Date(y,m-1,1))}},'‹'), h('button',{onClick:function(){month[1](new Date(current.getFullYear(),current.getMonth(),1));selected[1](today)}},L('今天','Today')),h('button',{'aria-label':L('下个月','Next month'),onClick:function(){month[1](new Date(y,m+1,1))}},'›'))),
-            h('div',{className:'i5-month-grid',role:'group','aria-label':L('选择日期','Choose date')}, (locale==='zh'?['日','一','二','三','四','五','六']:['Su','Mo','Tu','We','Th','Fr','Sa']).map(function(w){return h('small',{key:w},w)}),cells.map(function(date, idx){
+            h('div',{className:'i5-month-grid',role:'group','aria-label':L('选择日期','Choose date')}, (locale==='zh'?['S','M','T','W','T','F','S']:['Su','Mo','Tu','We','Th','Fr','Sa']).map(function(w){return h('small',{key:w},w)}),cells.map(function(date, idx){
               if(!date)return h('span',{key:'empty'+idx})
               var es=entries.filter(function(e){return e.date===date})
               return h('button',{key:date,'aria-label':date+(es.length?' · '+es.length+L(' 项日程',' events'):''),'aria-pressed':date===selected[0],'data-today':String(date===today),onClick:function(){selected[1](date)}},h('span',null,Number(date.slice(-2))),h('div',{className:'i5-day-dots'},es.slice(0,3).map(function(e,j){return h('i',{key:j,'data-done':String(!!e.done)})}),es.length>3?h('small',{className:'i5-day-overflow'},'+'+(es.length-3)):null))

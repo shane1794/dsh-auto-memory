@@ -25,7 +25,7 @@ const ok = (c, m) => { if (c) pass++; else { fail++; fails.push(m) } }
 // Execute the real contiguous localization declarations, including I18N.ja assignments.
 // Explicit unique boundaries fail on source drift; no parser package or copied dictionary.
 const startMarker = '    var I18N = {'
-const endMarker = "    var localeMode = 'system'"
+const endMarker = "    var localeMode = 'en'"
 const start = SRC.indexOf(startMarker), end = SRC.indexOf(endMarker)
 if (start < 0 || end <= start || SRC.indexOf(startMarker, start + 1) >= 0 || SRC.indexOf(endMarker, end + 1) >= 0) throw Error('Localization source boundaries changed')
 const declarations = SRC.slice(start, end)

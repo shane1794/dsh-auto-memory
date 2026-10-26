@@ -39,7 +39,7 @@
       return pair[0]
     }
     function iter5StyleLabels() {
-      return locale === 'zh' ? ['界面皮肤', '新款（经典）', '仪器', '编辑', '活水'] : locale === 'ja' ? ['スキン', 'ニュー（クラシック）', '計器', '編集', 'ウォーター'] : ['Interface skin', 'New (classic)', 'Instrument', 'Editorial', 'Water']
+      return locale === 'zh' ? ['Interface skin', 'New (classic)', 'Instrument', 'Editorial', 'Living water'] : locale === 'ja' ? ['スキン', 'ニュー（クラシック）', 'Instrument', 'Editorial', 'ウォーター'] : ['Interface skin', 'New (classic)', 'Instrument', 'Editorial', 'Water']
     }
     function Iter5StylePicker() {
       var value = useIter5Style(), labels = iter5StyleLabels()
@@ -91,6 +91,6 @@
     }
     function useIter5Theme() { var host = useDeepTheme(), mode = useIter5Mode(); return mode === 'system' ? host : mode === 'dark' }
     function Iter5ModePicker() {
-      var mode = useIter5Mode(), labels = locale === 'zh' ? ['明暗模式','跟随宿主','浅色','深色'] : locale === 'ja' ? ['表示モード','ホストに従う','ライト','ダーク'] : ['Color mode','Follow host','Light','Dark']
+      var mode = useIter5Mode(), labels = locale === 'zh' ? ['Light/dark mode','Follow the host','Light','Dark'] : locale === 'ja' ? ['Display mode','Follow the host','ライト','ダーク'] : ['Color mode','Follow host','Light','Dark']
       return h('select', { className:'i5-mode-picker','aria-label':labels[0],title:labels[0],value:mode,onChange:function(e){iter5SetMode(e.target.value)} },['system','light','dark'].map(function(id,i){return h('option',{value:id,key:id},labels[i+1])}))
     }
